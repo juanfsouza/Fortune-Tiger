@@ -2,7 +2,8 @@
   
 # Fortune Tiger
 
-![3480b6fefb6b611d199597c8bbb1ae7b](https://github.com/user-attachments/assets/30c49609-5cac-4ceb-97d0-877c754d6a54)
+![Sem título](https://github.com/user-attachments/assets/8fa366ef-3a58-40e7-8775-fd710c194fe2)
+
 
 </br>
 
