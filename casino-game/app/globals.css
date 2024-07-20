@@ -1,0 +1,13 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  @apply text-white p-2 rounded-full bg-gradient-primary hover:from-orange-500 hover:to-red-600 transition;
+}
+
+.bg-custom-color {
+  @apply bg-gray-950 bg-opacity-90;
+}
+
