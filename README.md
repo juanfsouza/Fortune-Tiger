@@ -2,9 +2,9 @@
   
 # Foturne Tiger
 
-<h3>🚧 Em Construção.... 🚧 </h3>
+![Screenshot_3](https://github.com/user-attachments/assets/58ba1267-8ce1-4a0d-8fec-ad83fe09d7b1)
 
-![3480b6fefb6b611d199597c8bbb1ae7b](https://github.com/user-attachments/assets/ea625b40-f6b3-4ff0-93d7-cb034e9ed5e9)
+<h3>🚧 Em Construção.... 🚧 </h3>
 
 Desenvolvendo Jogo de casino igual Fortune Tiger.
 
