@@ -1,6 +1,4 @@
 <div align="center">
-  
-# Fortune Tiger
 
 ![Sem título](https://github.com/user-attachments/assets/8fa366ef-3a58-40e7-8775-fd710c194fe2)
 
