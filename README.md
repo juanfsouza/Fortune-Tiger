@@ -9,7 +9,7 @@
 
 <h3>🚧 Em Construção.... 🚧 </h3>
 
-Desenvolvendo Jogo de casino igual Fortune Tiger.
+Desenvolvendo Jogo de casino igual Fortune Tiger
 
 </div>
 
