@@ -2,7 +2,7 @@
   
 # Foturne Tiger
 
-![Screenshot_3](https://github.com/user-attachments/assets/58ba1267-8ce1-4a0d-8fec-ad83fe09d7b1)
+![3480b6fefb6b611d199597c8bbb1ae7b](https://github.com/user-attachments/assets/30c49609-5cac-4ceb-97d0-877c754d6a54)
 
 <h3>🚧 Em Construção.... 🚧 </h3>
 
