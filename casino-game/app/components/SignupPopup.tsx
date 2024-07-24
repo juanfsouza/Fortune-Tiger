@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -12,16 +11,16 @@ export default function SignupPopup({ togglePopup }: SignupPopupProps) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleSignup = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/users/register', { name, email, password });
-            console.log('User registered:', response.data);
-            // Enviar código de confirmação
-            await axios.post('/api/send-confirmation-email', { email });
+            const response = await axios.post(API_URL, { name, email, password });
+            setMessage(response.data); // Exibir a mensagem de sucesso
         } catch (error) {
             console.error('Signup error:', error);
+            setMessage('An error occurred while registering.'); // Exibir a mensagem de erro
         }
     };
 
@@ -64,6 +63,7 @@ export default function SignupPopup({ togglePopup }: SignupPopupProps) {
                         Register
                     </button>
                 </form>
+                {message && <p className="mt-4 text-center">{message}</p>}
                 <button
                     onClick={togglePopup}
                     className="block mt-4 mx-auto text-blue-500 hover:underline"

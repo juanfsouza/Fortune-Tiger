@@ -1,7 +1,6 @@
 package com.example.cassino.controllers;
 
 import com.example.cassino.services.EmailService;
-import com.mailjet.client.errors.MailjetException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +19,10 @@ public class EmailController {
     public ResponseEntity<String> sendConfirmationEmail(@RequestParam String email) {
         try {
             String confirmationCode = generateConfirmationCode();
-            emailService.sendEmail(email, "Confirmation Code", "Your confirmation code is: " + confirmationCode);
+            String confirmationLink = "http://localhost:3000/confirm?token=" + confirmationCode;
+            emailService.sendEmail(email, "Confirm Your Registration", "Click the link to confirm your registration: " + confirmationLink);
             return new ResponseEntity<>("Email sent", HttpStatus.OK);
-        } catch (MailjetException e) {
+        } catch (Exception e) {
             return new ResponseEntity<>("Error sending email", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

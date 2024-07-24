@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -21,7 +20,6 @@ public class UserService {
 
     public User createUser(User user) {
         user.setBalance(new BigDecimal("1000.00"));
-        // Gerar um token de confirmação e definir no usuário
         String confirmationToken = generateConfirmationToken();
         user.setConfirmationToken(confirmationToken);
         return userRepository.save(user);
@@ -31,7 +29,7 @@ public class UserService {
         User user = userRepository.findByConfirmationToken(token);
         if (user != null) {
             user.setConfirmed(true);
-            user.setConfirmationToken(null); // Limpar o token após a confirmação
+            user.setConfirmationToken(null);
             userRepository.save(user);
             return true;
         }
@@ -39,7 +37,6 @@ public class UserService {
     }
 
     private String generateConfirmationToken() {
-        // Gerar um token único para confirmação
         return UUID.randomUUID().toString();
     }
 }

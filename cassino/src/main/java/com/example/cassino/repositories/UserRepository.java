@@ -2,9 +2,12 @@ package com.example.cassino.repositories;
 
 import com.example.cassino.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.Optional;
 
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
-    User findByConfirmationToken(String confirmationToken); // Adiciona este método
+    User findByConfirmationToken(String token);
 }

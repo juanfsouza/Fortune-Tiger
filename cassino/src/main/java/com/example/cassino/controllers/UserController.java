@@ -20,16 +20,13 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
-        // Verifica se o e-mail já está registrado
         if (userService.emailExists(user.getEmail())) {
             return new ResponseEntity<>("Email already in use", HttpStatus.BAD_REQUEST);
         }
 
-        // Cria o usuário e gera um link de confirmação
         User newUser = userService.createUser(user);
         String confirmationLink = "http://localhost:3000/confirm?token=" + newUser.getConfirmationToken();
 
-        // Envia o e-mail de confirmação
         try {
             emailService.sendEmail(user.getEmail(), "Confirm Your Registration", "Click the link to confirm your registration: " + confirmationLink);
         } catch (Exception e) {
@@ -41,7 +38,6 @@ public class UserController {
 
     @GetMapping("/confirm")
     public ResponseEntity<?> confirmRegistration(@RequestParam String token) {
-        // Verifique o token e confirme o registro
         boolean confirmed = userService.confirmUser(token);
 
         if (confirmed) {
